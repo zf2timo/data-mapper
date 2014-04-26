@@ -4,6 +4,8 @@
 namespace Module\Entity;
 
 
+use Module\Entity\Collection\ArticleCollection;
+
 class Category implements CategoryInterface
 {
     /**
@@ -15,6 +17,11 @@ class Category implements CategoryInterface
      * @var string
      */
     protected $name;
+
+    /**
+     * @var ArticleCollection
+     */
+    protected $articleCollection;
 
     public function setId($id)
     {
@@ -34,6 +41,22 @@ class Category implements CategoryInterface
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @param \Module\Entity\Collection\ArticleCollection $articleCollection
+     */
+    public function setArticleCollection($articleCollection)
+    {
+        $this->articleCollection = $articleCollection;
+    }
+
+    /**
+     * @return \Module\Entity\Collection\ArticleCollection
+     */
+    public function getArticleCollection()
+    {
+        return $this->articleCollection;
     }
 
 } 
