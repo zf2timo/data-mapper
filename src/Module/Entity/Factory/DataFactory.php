@@ -36,6 +36,10 @@ class DataFactory
         return $this->getCategoryMapper()->findById($id)->current();
     }
 
+    /**
+     * @param int $id
+     * @return \Module\Entity\Category
+     */
     public function createCategoryWithRelation($id)
     {
         $category = $this->createCategory($id);
@@ -44,6 +48,7 @@ class DataFactory
         $articles = $this->getArticleMapper()->findByCategory($category->getId());
         /** @var ArticleInterface $article */
         foreach ($articles as $article) {
+            $article->setCategory($category);
             $articleCollection->offsetSet($article->getId(), $article);
         }
         $category->setArticleCollection($articleCollection);

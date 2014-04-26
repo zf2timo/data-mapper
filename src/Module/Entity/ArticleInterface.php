@@ -32,4 +32,14 @@ interface ArticleInterface
      * @param string $headline
      */
     public function setHeadline($headline);
+
+    /**
+     * @param CategoryInterface $category
+     */
+    public function setCategory(CategoryInterface $category);
+
+    /**
+     * @return CategoryInterface
+     */
+    public function getCategory();
 }
