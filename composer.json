@@ -1,5 +1,8 @@
 {
     "require": {
         "zf-commons/zfc-base": "0.1.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "master-dev"
     }
 }
