@@ -9,7 +9,7 @@ use Module\Entity\Collection\ArticleCollection;
 use Module\Mapper\Article;
 use Module\Mapper\Category;
 
-class DataFactory
+class CategoryDataFactory
 {
     /**
      * @var Category
