@@ -1,0 +1,35 @@
+<phpunit bootstrap="./bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         verbose="true"
+         stopOnFailure="false"
+         processIsolation="false"
+         backupGlobals="false"
+         syntaxCheck="true"
+>
+    <testsuite name="DataMapper Suite">
+        <directory>./ModuleTest</directory>
+    </testsuite>
+    
+    <php>
+        <const name="DB_MYSQL_DSN" value="mysql:host=localhost;dbname=data_mapper" />
+        <const name="DB_MYSQL_USERNAME" value="root" />
+        <const name="DB_MYSQL_PASSWORD" value="" />
+        <const name="DB_MYSQL_SCHEMA" value="../data/schema.sql" />
+        
+    </php>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">../src</directory>
+        </whitelist>
+    </filter>
+    
+    <logging>
+        <log type="coverage-text" target="php://stdout"/>
+        <log type="coverage-clover" target="../build/logs/clover.xml"/>
+    </logging>
+</phpunit>
+
