@@ -1,5 +1,6 @@
 {
     "require": {
+        "zendframework/zendframework": "2.3.*",
         "zf-commons/zfc-base": "0.1.*",
         "phpunit/phpunit": "3.7.*"
     },
