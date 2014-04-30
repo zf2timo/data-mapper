@@ -9,33 +9,13 @@ use PHPUnit_Framework_MockObject_MockObject;
 use Zend\Db\ResultSet\HydratingResultSet;
 use Zend\Stdlib\Hydrator\ClassMethods;
 
-class ArticleTest extends \PHPUnit_Framework_TestCase
+class ArticleTest extends AbstractMapperTest
 {
 
     /**
      * @var \Module\Mapper\Article
      */
     protected $mapper;
-
-    /**
-     * @var PHPUnit_Framework_MockObject_MockObject
-     */
-    protected $mockDriver;
-
-    /**
-     * @return \Module\Mapper\Article
-     */
-    protected function setUp()
-    {
-        $this->mockDriver = $this->getDriverStub();
-
-        $mapper = new \Module\Mapper\Article();
-        $mapper->setDbAdapter($this->getAdapterStub($this->mockDriver));
-        $mapper->setHydrator(new ClassMethods());
-        $mapper->setEntityPrototype(new Article());
-
-        $this->mapper = $mapper;
-    }
 
     public function testAnotherMock()
     {
@@ -110,35 +90,13 @@ class ArticleTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    /**
-     * @return PHPUnit_Framework_MockObject_MockObject
-     */
-    protected function getDriverStub()
+    protected function getEntityPrototype()
     {
-        $mockConnection = $this->getMock('Zend\Db\Adapter\Driver\ConnectionInterface');
-        $mockDriver = $this->getMock('Zend\Db\Adapter\Driver\DriverInterface');
-        $mockDriver->expects($this->any())->method('getConnection')->will($this->returnValue($mockConnection));
-        return $mockDriver;
+        return new Article();
     }
 
-    /**
-     * @param $mockDriver
-     * @return PHPUnit_Framework_MockObject_MockObject
-     */
-    protected function getAdapterStub($mockDriver)
+    protected function getMapper()
     {
-        $mockAdapter = $this->getMock('Zend\Db\Adapter\Adapter', null, array($mockDriver));
-        return $mockAdapter;
-    }
-
-    /**
-     * @param $result
-     * @return PHPUnit_Framework_MockObject_MockObject
-     */
-    protected function getStatementStub($result)
-    {
-        $mockStatement = $this->getMock('Zend\Db\Adapter\Driver\StatementInterface');
-        $mockStatement->expects($this->any())->method('execute')->will($this->returnValue($result));
-        return $mockStatement;
+        return new \Module\Mapper\Article();
     }
 }
