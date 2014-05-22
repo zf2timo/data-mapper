@@ -51,7 +51,7 @@ class CategoryTest extends AbstractMapperTest
         $result = new \ArrayIterator([1 =>
             [
                 'id' => 1,
-                'headline' => 'Foo',
+                'name' => 'Foo',
                 'category_id' => 1,
             ],
         ]);
