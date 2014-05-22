@@ -4,11 +4,12 @@
 namespace Module\Mapper\Factory;
 
 
-use Module\Mapper\Category;
 use Module\Entity\Category as CategoryEntity;
+use Module\Mapper\Category;
 use ZfcBase\Mapper\AbstractDbMapper;
 
-class CategoryFactory extends AbstractMapperFactory {
+class CategoryFactory extends AbstractMapperFactory
+{
 
     /**
      * @return AbstractDbMapper

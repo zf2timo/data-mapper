@@ -58,5 +58,4 @@ class Category implements CategoryInterface
     {
         return $this->articleCollection;
     }
-
-} 
+}

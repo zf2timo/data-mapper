@@ -47,4 +47,4 @@ class Category extends AbstractDbMapper
 
         return $resultSet;
     }
-} 
+}
