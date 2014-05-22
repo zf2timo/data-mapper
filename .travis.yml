@@ -10,7 +10,9 @@ before_script:
     - composer self-update
     - composer install --prefer-source -v --dev
 
-script: phpunit
+script: 
+    - ./vendor/bin/phpunit --bootstrap=tests/bootstrap.php
+    - ./vendor/bin/phpcs -n --standard=PSR2 ./src ./tests
 
 matrix:
     allow_failures:
