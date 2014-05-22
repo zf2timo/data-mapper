@@ -32,18 +32,18 @@ class CategoryTest extends AbstractMapperTest
 
         $resultSet = $this->mapper->findAll();
 
-        $this->assertEquals(2, $resultSet->count());
+        $this->assertSame(2, $resultSet->count());
 
         $fooCategory = $resultSet->current();
 
-        $this->assertEquals(1, $fooCategory->getId());
-        $this->assertEquals('Foo', $fooCategory->getName());
+        $this->assertSame(1, $fooCategory->getId());
+        $this->assertSame('Foo', $fooCategory->getName());
 
         $resultSet->next();
         $barCategory = $resultSet->current();
 
-        $this->assertEquals(2, $barCategory->getId());
-        $this->assertEquals('Bar', $barCategory->getName());
+        $this->assertSame(2, $barCategory->getId());
+        $this->assertSame('Bar', $barCategory->getName());
     }
 
     public function testFindById()
@@ -61,12 +61,12 @@ class CategoryTest extends AbstractMapperTest
 
         $resultSet = $this->mapper->findById(1);
 
-        $this->assertEquals(1, $resultSet->count());
+        $this->assertSame(1, $resultSet->count());
 
         $fooCategory = $resultSet->current();
 
-        $this->assertEquals(1, $fooCategory->getId());
-        $this->assertEquals('Foo', $fooCategory->getName());
+        $this->assertSame(1, $fooCategory->getId());
+        $this->assertSame('Foo', $fooCategory->getName());
     }
     
     protected function getEntityPrototype()
