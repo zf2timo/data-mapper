@@ -16,11 +16,12 @@ class CategoryTest extends AbstractMapperTest
 
     public function testFindAll()
     {
-        $result = new \ArrayIterator([1 =>
-            [
-                'id' => 1,
-                'name' => 'Foo',
-            ],
+        $result = new \ArrayIterator([
+            1 =>
+                [
+                    'id' => 1,
+                    'name' => 'Foo',
+                ],
             2 => [
                 'id' => 2,
                 'name' => 'Bar',
@@ -48,12 +49,13 @@ class CategoryTest extends AbstractMapperTest
 
     public function testFindById()
     {
-        $result = new \ArrayIterator([1 =>
-            [
-                'id' => 1,
-                'name' => 'Foo',
-                'category_id' => 1,
-            ],
+        $result = new \ArrayIterator([
+            1 =>
+                [
+                    'id' => 1,
+                    'name' => 'Foo',
+                    'category_id' => 1,
+                ],
         ]);
 
         $mockStatement = $this->getStatementStub($result);
@@ -68,7 +70,7 @@ class CategoryTest extends AbstractMapperTest
         $this->assertSame(1, $fooCategory->getId());
         $this->assertSame('Foo', $fooCategory->getName());
     }
-    
+
     protected function getEntityPrototype()
     {
         return new Category();
@@ -79,4 +81,3 @@ class CategoryTest extends AbstractMapperTest
         return new \Module\Mapper\Category();
     }
 }
- 

@@ -4,7 +4,6 @@
 namespace ModuleTest\Entity;
 
 
-use Mockery\Mock;
 use Module\Entity\Article;
 use Module\Entity\Category;
 use Module\Entity\Collection\ArticleCollection;
@@ -82,4 +81,4 @@ class CategoryDataFactoryTest extends \PHPUnit_Framework_TestCase
     {
         \Mockery::close();
     }
-} 
+}

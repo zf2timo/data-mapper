@@ -6,8 +6,6 @@ namespace ModuleTest\Mapper;
 
 use Module\Entity\Article;
 use PHPUnit_Framework_MockObject_MockObject;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Stdlib\Hydrator\ClassMethods;
 
 class ArticleTest extends AbstractMapperTest
 {
@@ -19,12 +17,13 @@ class ArticleTest extends AbstractMapperTest
 
     public function testAnotherMock()
     {
-        $result = new \ArrayIterator([1 =>
-            [
-                'id' => 1,
-                'headline' => 'Foo',
-                'category_id' => 1,
-            ],
+        $result = new \ArrayIterator([
+            1 =>
+                [
+                    'id' => 1,
+                    'headline' => 'Foo',
+                    'category_id' => 1,
+                ],
             2 => [
                 'id' => 2,
                 'headline' => 'Bar',
