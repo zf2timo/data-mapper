@@ -21,7 +21,7 @@ class CategoryDataFactory
      */
     protected $articleMapper;
 
-    function __construct(Category $categoryMapper, Article $articleMapper)
+    public function __construct(Category $categoryMapper, Article $articleMapper)
     {
         $this->categoryMapper = $categoryMapper;
         $this->articleMapper = $articleMapper;
@@ -71,5 +71,4 @@ class CategoryDataFactory
     {
         return $this->categoryMapper;
     }
-
-} 
+}

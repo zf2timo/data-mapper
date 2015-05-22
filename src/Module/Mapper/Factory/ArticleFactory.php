@@ -4,8 +4,8 @@
 namespace Module\Mapper\Factory;
 
 
-use Module\Mapper\Article;
 use Module\Entity\Article as ArticleEntity;
+use Module\Mapper\Article;
 use ZfcBase\Mapper\AbstractDbMapper;
 
 class ArticleFactory extends AbstractMapperFactory

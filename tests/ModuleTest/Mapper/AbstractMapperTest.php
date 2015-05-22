@@ -4,7 +4,6 @@
 namespace ModuleTest\Mapper;
 
 
-use Module\Mapper\Category;
 use PHPUnit_Framework_MockObject_MockObject;
 use Zend\Stdlib\Hydrator\ClassMethods;
 
@@ -65,6 +64,5 @@ abstract class AbstractMapperTest extends \PHPUnit_Framework_TestCase
 
     abstract protected function getEntityPrototype();
 
-    abstract  protected function getMapper();
+    abstract protected function getMapper();
 }
- 

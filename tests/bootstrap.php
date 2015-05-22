@@ -16,4 +16,3 @@ $loader->add('ModuleTest', __DIR__);
 if (!$config = @include 'configuration.php') {
     $config = require 'configuration.php.dist';
 }
-

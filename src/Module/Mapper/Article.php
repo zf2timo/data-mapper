@@ -40,4 +40,4 @@ class Article extends AbstractDbMapper
 
         return $resultSet;
     }
-} 
+}

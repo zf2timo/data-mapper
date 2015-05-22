@@ -6,7 +6,6 @@ namespace ModuleTest\Collection;
 
 use Module\Entity\Article;
 use Module\Entity\Collection\ArticleCollection;
-use Module\Exception\InvalidArgument;
 
 class ArticleCollectionTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,7 +31,10 @@ class ArticleCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testOffsetInvalidArgument()
     {
-        $this->setExpectedException('Module\Exception\InvalidArgument', 'Invalid argument was given to Module\Entity\Collection\ArticleCollection::offsetSet. Expected ArticleInterface got string');
+        $this->setExpectedException(
+            'Module\Exception\InvalidArgument',
+            'Invalid argument was given to Module\Entity\Collection\ArticleCollection::offsetSet. Expected ArticleInterface got string'
+        );
 
         $this->articleCollection->offsetSet(1, 'test.jpg');
     }
@@ -42,7 +44,7 @@ class ArticleCollectionTest extends \PHPUnit_Framework_TestCase
         $fooArticle = new Article();
         $fooArticle->setId(1);
 
-        $barArticle= new Article();
+        $barArticle = new Article();
         $barArticle->setId(2);
 
         $this->articleCollection->offsetSet(1, $fooArticle);
@@ -65,9 +67,11 @@ class ArticleCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testAppendInvalidArgument()
     {
-        $this->setExpectedException('Module\Exception\InvalidArgument', 'Invalid argument was given to Module\Entity\Collection\ArticleCollection::append. Expected ArticleInterface got string');
+        $this->setExpectedException(
+            'Module\Exception\InvalidArgument',
+            'Invalid argument was given to Module\Entity\Collection\ArticleCollection::append. Expected ArticleInterface got string'
+        );
 
         $this->articleCollection->append('test.jpg');
     }
 }
- 

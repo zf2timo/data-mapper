@@ -37,4 +37,4 @@ class ArticleCollection extends \ArrayIterator
 
         parent::append($value);
     }
-} 
+}

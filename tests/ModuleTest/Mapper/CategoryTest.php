@@ -16,11 +16,12 @@ class CategoryTest extends AbstractMapperTest
 
     public function testFindAll()
     {
-        $result = new \ArrayIterator([1 =>
-            [
-                'id' => 1,
-                'name' => 'Foo',
-            ],
+        $result = new \ArrayIterator([
+            1 =>
+                [
+                    'id' => 1,
+                    'name' => 'Foo',
+                ],
             2 => [
                 'id' => 2,
                 'name' => 'Bar',
@@ -32,28 +33,29 @@ class CategoryTest extends AbstractMapperTest
 
         $resultSet = $this->mapper->findAll();
 
-        $this->assertEquals(2, $resultSet->count());
+        $this->assertSame(2, $resultSet->count());
 
         $fooCategory = $resultSet->current();
 
-        $this->assertEquals(1, $fooCategory->getId());
-        $this->assertEquals('Foo', $fooCategory->getName());
+        $this->assertSame(1, $fooCategory->getId());
+        $this->assertSame('Foo', $fooCategory->getName());
 
         $resultSet->next();
         $barCategory = $resultSet->current();
 
-        $this->assertEquals(2, $barCategory->getId());
-        $this->assertEquals('Bar', $barCategory->getName());
+        $this->assertSame(2, $barCategory->getId());
+        $this->assertSame('Bar', $barCategory->getName());
     }
 
     public function testFindById()
     {
-        $result = new \ArrayIterator([1 =>
-            [
-                'id' => 1,
-                'headline' => 'Foo',
-                'category_id' => 1,
-            ],
+        $result = new \ArrayIterator([
+            1 =>
+                [
+                    'id' => 1,
+                    'name' => 'Foo',
+                    'category_id' => 1,
+                ],
         ]);
 
         $mockStatement = $this->getStatementStub($result);
@@ -61,14 +63,14 @@ class CategoryTest extends AbstractMapperTest
 
         $resultSet = $this->mapper->findById(1);
 
-        $this->assertEquals(1, $resultSet->count());
+        $this->assertSame(1, $resultSet->count());
 
         $fooCategory = $resultSet->current();
 
-        $this->assertEquals(1, $fooCategory->getId());
-        $this->assertEquals('Foo', $fooCategory->getName());
+        $this->assertSame(1, $fooCategory->getId());
+        $this->assertSame('Foo', $fooCategory->getName());
     }
-    
+
     protected function getEntityPrototype()
     {
         return new Category();
@@ -79,4 +81,3 @@ class CategoryTest extends AbstractMapperTest
         return new \Module\Mapper\Category();
     }
 }
- 

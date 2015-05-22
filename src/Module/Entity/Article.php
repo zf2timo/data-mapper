@@ -3,8 +3,6 @@
 
 namespace Module\Entity;
 
-use Module\Entity\Category;
-
 class Article implements ArticleInterface
 {
     /**
@@ -60,11 +58,10 @@ class Article implements ArticleInterface
     public function setCategory(CategoryInterface $category)
     {
         $this->category = $category;
-    } 
+    }
 
     public function getCategory()
     {
         return $this->category;
     }
-
 }
