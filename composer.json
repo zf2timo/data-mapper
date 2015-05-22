@@ -26,7 +26,7 @@
     },
     "require-dev": {
         "mockery/mockery": "master-dev",
-        "phpunit/phpunit": ">=3.7,<4",
+        "phpunit/phpunit": "4.*",
         "squizlabs/php_codesniffer": "1.4.*",
         "satooshi/php-coveralls": "dev-master",
         "sebastianbergmann/phpcov": "1.1.0"
